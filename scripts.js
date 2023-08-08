@@ -19,7 +19,7 @@ async function getISSLocation() {
   map.setView([latitude, longitude]);
   marker.addTo(map);
   layer.addTo(map);
+  setInterval(getISSLocation, 35000);
 }
-setInterval(getISSLocation, 35000);
 
 window.onload = getISSLocation;
