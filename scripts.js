@@ -12,16 +12,14 @@ async function getLocation() {
 }
 
 async function getISSLocation() {
-  const data = await getLocation();
+  let data = await getLocation();
   let latitude = data.iss_position.latitude;
   let longitude = data.iss_position.longitude;
   let marker = L.marker([latitude, longitude]).bindPopup('ISS Location').openPopup();
   map.setView([latitude, longitude]);
   marker.addTo(map);
   layer.addTo(map);
-
-  setInterval(getISSLocation, 35000);
 }
-
+setInterval(getISSLocation, 35000);
 
 window.onload = getISSLocation;
