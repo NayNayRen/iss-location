@@ -73,7 +73,7 @@ header h1 {
   -webkit-box-pack: center;
   align-items: center;
   background-attachment: fixed;
-  background-image: url("img/stars-bg.webp");
+  background-image: url("/img/stars-bg.webp");
   background-position: center;
   background-size: cover;
   display: -ms-flexbox;
@@ -125,7 +125,7 @@ header h1 {
   }
 
   .main {
-    background-image: url("img/stars-bg-mobile.webp");
+    background-image: url("/img/stars-bg-mobile.webp");
     padding: 100px 0 0 0;
   }
 
