@@ -9,7 +9,7 @@ let map = new L.map('map', {
 });
 const issIcon = L.icon({
   iconUrl: "img/iss.png",
-  iconSize: [40, 32],
+  iconSize: [50, 42],
   // [x, y] axis movements
   iconAnchor: [20, 20],
   popupAnchor: [0, -10]
