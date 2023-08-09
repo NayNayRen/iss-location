@@ -21,6 +21,6 @@ async function getISSLocation() {
   marker.addTo(map);
   layer.addTo(map);
 }
-setInterval(getISSLocation, 5000);
+setInterval(getISSLocation, 35000);
 
 window.onload = getISSLocation;
