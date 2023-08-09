@@ -5,40 +5,22 @@ let map = new L.map('map', {
   scrollWheelZoom: false
 });
 
-function getLocation() {
-  // let res = await fetch('http://api.open-notify.org/iss-now.json');
-  fetch("http://api.open-notify.org/iss-now.json", {
-    headers: { Origin: window.location.host }
-  })
-    .then(res => res.json())
-    .then(res => {
-      // console.log(res);
-      let latitude = res.iss_position.latitude;
-      let longitude = res.iss_position.longitude;
-      let marker = L.marker([latitude, longitude]).bindPopup('ISS Location').openPopup();
-      map.setView([latitude, longitude]);
-      marker.addTo(map);
-      layer.addTo(map);
-      setInterval(getLocation, 5000);
-    })
-    .catch(err => {
-      console.log(err);
-    });
-  // let data = await res.json();
-  // return data;
+async function getLocation() {
+  let res = await fetch('https://api.wheretheiss.at/v1/satellites/25544');
+  let data = await res.json();
+  return data;
 }
 
-// async function getISSLocation() {
-//   let data = await getLocation();
-//   let latitude = data.iss_position.latitude;
-//   let longitude = data.iss_position.longitude;
-//   let marker = L.marker([latitude, longitude]).bindPopup('ISS Location').openPopup();
-//   map.setView([latitude, longitude]);
-//   marker.addTo(map);
-//   layer.addTo(map);
-//   setInterval(getISSLocation, 35000);
-// }
+async function getISSLocation() {
+  let data = await getLocation();
+  // console.log(data);
+  let latitude = data.latitude;
+  let longitude = data.longitude;
+  let marker = L.marker([latitude, longitude]).bindPopup('ISS Location').openPopup();
+  map.setView([latitude, longitude]);
+  marker.addTo(map);
+  layer.addTo(map);
+  setInterval(getISSLocation, 35000);
+}
 
-// window.onload = getISSLocation;
-window.onload = getLocation;
-
+window.onload = getISSLocation;
