@@ -101,6 +101,19 @@ header h1 {
   width: 700px;
 }
 
+.popup h3 {
+  margin: 0;
+}
+
+.popup p {
+  margin: 0;
+}
+
+.popup span {
+  color: red;
+  margin-top: 5px;
+}
+
 @media(max-width:700px) {
   header h1 {
     font-size: 28px;

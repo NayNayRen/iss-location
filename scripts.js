@@ -1,6 +1,5 @@
 // set marker to null for easy removal
 let marker = null;
-let popup = null;;
 let testMarker = L.marker([0, 0]);
 let layer = L.tileLayer('https://{s}.tile.osm.org/{z}/{x}/{y}.png');
 let map = new L.map('map', {
@@ -15,9 +14,15 @@ const issIcon = L.icon({
   iconAnchor: [20, 20],
   popupAnchor: [0, -10]
 });
+let popup = L.popup({
+  autoClose: false,
+  minWidth: 100,
+  maxWidth: 150,
+  keepInView: true
+});
 
-function kiloToMiles(kilo) {
-  let miles = kilo / 1.6093440006147;
+function kilometersToMiles(kilometers) {
+  let miles = kilometers / 1.6093440006147;
   return miles;
 }
 
@@ -29,11 +34,18 @@ async function getLocation() {
 
 async function showLocation() {
   let data = await getLocation();
-  // console.log(data);
   let latitude = data.latitude;
   let longitude = data.longitude;
-  popup = L.popup()
-    .setContent(`<p>Satelite: ISS<br />This is a nice popup.</p>`);
+  popup.setContent(
+    `<div class="popup">
+      <h3>ISS</h3>
+      <p>
+        <span>Lat:</span> ${Math.round(latitude * 10000) / 10000}<br />
+        <span>Lng:</span> ${Math.round(longitude * 10000) / 10000}<br />
+        <span>Mph:</span> ${Math.round(kilometersToMiles(data.velocity) * 10) / 10}
+      </p>
+    </div>`
+  );
   if (marker !== null) {
     map.removeLayer(marker);
   }
