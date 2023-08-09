@@ -1,4 +1,4 @@
-let layer = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png');
+let layer = L.tileLayer('https://{s}.tile.osm.org/{z}/{x}/{y}.png');
 let map = new L.map('map', {
   center: [0, 0],
   zoom: 2,
@@ -20,7 +20,7 @@ async function getISSLocation() {
   map.setView([latitude, longitude]);
   marker.addTo(map);
   layer.addTo(map);
-  setInterval(getISSLocation, 35000);
 }
+setInterval(getISSLocation, 5000);
 
 window.onload = getISSLocation;
