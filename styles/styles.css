@@ -4,7 +4,61 @@ body {
 
 .container {
   width: 80%;
+  /* outline: solid 1px red; */
+}
+
+.container-info {
+  -ms-flex-align: start;
+  -ms-flex-direction: column;
+  -ms-flex-pack: center;
+  -webkit-box-align: start;
+  -webkit-box-direction: normal;
+  -webkit-box-orient: vertical;
+  -webkit-box-pack: center;
+  align-items: flex-start;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: -ms-flexbox;
+  display: -webkit-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 20px auto 0 auto;
+  width: 675px;
   /* outline: solid 1px blue; */
+}
+
+.container-info a {
+  -webkit-transition: opacity 150ms ease;
+  color: #87CEEB;
+  font-size: 22px;
+  opacity: 1;
+  text-shadow: 0 2px 2px #000;
+  transition: opacity 150ms ease;
+}
+
+.container-info i {
+  font-size: 16px;
+  margin-left: 10px;
+}
+
+.container-info a:hover {
+  opacity: 0.75;
+}
+
+.container-info li:first-of-type {
+  margin-bottom: 10px;
+}
+
+.container-info ul {
+  list-style-type: none;
+  padding: 15px;
+}
+
+.container ul p {
+  color: #fff;
+  font-size: 16px;
+  padding-left: 10px;
+  text-shadow: 0 2px 2px #000;
 }
 
 footer {
@@ -38,7 +92,9 @@ footer {
 }
 
 header {
+  -webkit-box-shadow: 0 5px 20px #000;
   background-color: #000;
+  box-shadow: 0 5px 20px #000;
   color: #fff;
   height: auto;
   left: 0;
@@ -78,7 +134,7 @@ header h1 {
   -webkit-box-pack: center;
   align-items: center;
   background-attachment: fixed;
-  background-image: url("../img/stars-bg.webp");
+  background-image: url("../img/earth-bg.webp");
   background-position: center;
   background-size: cover;
   display: -ms-flexbox;
@@ -87,7 +143,7 @@ header h1 {
   flex-direction: column;
   justify-content: center;
   min-height: 100%;
-  padding: 130px 0 0 0;
+  padding: 110px 0 20px 0;
 }
 
 .main h2 {
@@ -125,7 +181,7 @@ header h1 {
 }
 
 .popup span {
-  color: red;
+  color: #ff0000;
   margin-top: 5px;
 }
 
@@ -134,8 +190,29 @@ header h1 {
     width: 100%;
   }
 
+  .container-info a {
+    font-size: 20px;
+  }
+
+  .container-info ul {
+    padding: 10px;
+  }
+
+  .container ul p {
+    padding-left: 10px;
+  }
+
   header h1 {
     font-size: 30px;
+  }
+
+  .header-logo {
+    width: 65px;
+
+  }
+
+  .main {
+    padding: 100px 0 40px 0;
   }
 
   .main h2 {
@@ -145,6 +222,14 @@ header h1 {
 
 @media(max-width:700px) {
 
+  .container-info {
+    width: 95%;
+  }
+
+  .container-info a:hover {
+    opacity: 1;
+  }
+
   header h1 {
     font-size: 26px;
     text-align: left;
@@ -152,7 +237,7 @@ header h1 {
 
   .footer-logo,
   .header-logo {
-    width: 50px;
+    width: 55px;
 
   }
 
@@ -167,13 +252,25 @@ header h1 {
 }
 
 @media(max-width:400px) {
+
+  .container-info {
+    margin: 0;
+    width: 100%;
+  }
+
+  .footer-logo,
+  .header-logo {
+    width: 45px;
+
+  }
+
   header h1 {
     font-size: 22px;
   }
 
   .main {
-    background-image: url("../img/stars-bg-mobile.webp");
-    padding: 100px 0 0 0;
+    background-image: url("../img/earth-bg-mobile.webp");
+    padding: 130px 0 0 0;
   }
 
   .main h2 {
@@ -185,7 +282,9 @@ header h1 {
   }
 
   #map-container {
+    -webkit-box-shadow: none;
     border-radius: 0;
+    box-shadow: none;
     height: 300px;
     width: 100%;
   }

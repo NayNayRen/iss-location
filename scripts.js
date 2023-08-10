@@ -15,10 +15,8 @@ const issIcon = L.icon({
   popupAnchor: [0, -10]
 });
 let popup = L.popup({
-  autoClose: false,
   minWidth: 100,
   maxWidth: 150,
-  keepInView: true
 });
 
 function kilometersToMiles(kilometers) {
@@ -36,13 +34,14 @@ async function showLocation() {
   let data = await getLocation();
   let latitude = data.latitude;
   let longitude = data.longitude;
+  let formatSpeed = Math.round(kilometersToMiles(data.velocity) * 10) / 10;
   popup.setContent(
     `<div class="popup">
       <h3>ISS</h3>
       <p>
         <span>Lat:</span> ${Math.round(latitude * 10000) / 10000}<br />
         <span>Lng:</span> ${Math.round(longitude * 10000) / 10000}<br />
-        <span>Mph:</span> ${Math.round(kilometersToMiles(data.velocity) * 10) / 10}
+        <span>Mph:</span> ${formatSpeed.toLocaleString('en-US')}
       </p>
     </div>`
   );

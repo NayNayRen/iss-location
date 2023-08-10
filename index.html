@@ -24,9 +24,30 @@
   </header>
   <main class="main">
     <div class="container">
-      <h2>You are viewing the current location for the ISS.</h2>
+      <h2>Current location of the ISS.</h2>
       <div id="map-container">
         <div id="map"></div>
+      </div>
+      <div class="container-info">
+        <ul>
+          <li>
+            <a href="https://leafletjs.com/reference.html" target="_blank" title="Visit Leaflet Maps">Leaflet Maps<i
+                class="fa-solid fa-up-right-from-square"></i></a>
+            <p>A JavaScript library used for all the mapping done. ISS data was pulled via an api from the site below.
+              Coordinates are
+              plotted from the latitude and longitude. The icon is a .png of the ISS used in place of the default
+              blue pin. The code that displays everything is re-fired every five
+              seconds to show the movement.</p>
+          </li>
+          <li>
+            <a href="https://wheretheiss.at/w/developer" target="_blank" title="Visit Where the ISS at?">Where the ISS
+              at?<i class="fa-solid fa-up-right-from-square"></i></a>
+            <p>The api used to get the data of the ISS. You can get information (current or previous) like latitude and
+              longitude, velocity, altitude, visibility, along with some other data too. ISS data is fetched on their
+              end every second using the same id number that NORAD has cateloged for it.
+            </p>
+          </li>
+        </ul>
       </div>
     </div>
   </main>
@@ -41,6 +62,7 @@
   </footer>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
   <script src="scripts.js" charset="utf-8"></script>
+  <script src="https://kit.fontawesome.com/5dd3e4fc9a.js" crossorigin="anonymous"></script>
 </body>
 
 </html>
