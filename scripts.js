@@ -36,10 +36,10 @@ async function showStationData() {
   let data = await getStationData();
   let latitude = data.latitude;
   let longitude = data.longitude;
-  let height = Math.round(kilometersToMiles(data.altitude) * 10) / 10;
-  let speed = Math.round(kilometersToMiles(data.velocity) * 10) / 10;
-  latitudeData.innerText = Math.round(latitude * 10000) / 10000;
-  longitudeData.innerText = Math.round(longitude * 10000) / 10000;
+  let height = Math.round(kilometersToMiles(data.altitude) * 1) / 1;
+  let speed = Math.round(kilometersToMiles(data.velocity) * 1) / 1;
+  latitudeData.innerText = Math.round(latitude * 100) / 100;
+  longitudeData.innerText = Math.round(longitude * 100) / 100;
   altitudeData.innerText = height;
   velocityData.innerText = speed.toLocaleString('en-US');
   if (marker !== null) {

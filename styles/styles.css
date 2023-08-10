@@ -16,7 +16,7 @@ body {
   -webkit-box-orient: vertical;
   -webkit-box-pack: center;
   align-items: flex-start;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.5);
   display: -ms-flexbox;
   display: -webkit-box;
   display: flex;
@@ -193,7 +193,7 @@ header h1 {
   transition: -webkit-transform 250ms ease;
   transition: transform 250ms ease, -webkit-transform 250ms ease;
   transition: transform 250ms ease;
-  width: 450px;
+  width: 400px;
   z-index: 2;
 }
 
