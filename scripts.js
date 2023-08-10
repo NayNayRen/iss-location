@@ -6,6 +6,8 @@ const latitudeData = document.querySelector('.latitude-data');
 const longitudeData = document.querySelector('.longitude-data');
 const altitudeData = document.querySelector('.altitude-data');
 const velocityData = document.querySelector('.velocity-data');
+const mapDataButton = document.querySelector('.map-data-button');
+const mapDataContainer = document.querySelector('.map-data-container');
 let map = new L.map('map', {
   center: [0, 0],
   zoom: 2,
@@ -52,4 +54,10 @@ async function showStationData() {
 }
 setInterval(showStationData, 5000);
 
-window.onload = showStationData;
+// window.onload = showStationData;
+window.addEventListener('load', () => {
+  showStationData();
+  mapDataButton.addEventListener('click', () => {
+    mapDataContainer.classList.toggle('map-data-container-toggle');
+  });
+});

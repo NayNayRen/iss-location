@@ -24,25 +24,30 @@
   </header>
   <main class="main">
     <div class="container">
-      <h2>Current location of the ISS.</h2>
+      <h2>Current Location</h2>
       <div id="map-container">
         <div id="map"></div>
-        <div class="map-container-data">
-          <ul>
-            <li>Latitude: <span class="latitude-data"></span></li>
-            <li>Longitude: <span class="longitude-data"></span></li>
-          </ul>
-          <ul>
-            <li>Altitude: <span class="altitude-data"></span> miles</li>
-            <li>Velocity: <span class="velocity-data"></span> mph</li>
-          </ul>
+        <div class="map-data-container">
+          <div>
+            <span class="map-data-button" aria-label="Map Data Button">
+              <i class="fa-solid fa-bars" aria-hidden="false"></i>
+            </span>
+            <ul>
+              <li>Latitude: <span class="latitude-data"></span></li>
+              <li>Longitude: <span class="longitude-data"></span></li>
+            </ul>
+            <ul>
+              <li>Altitude: <span class="altitude-data"></span> miles</li>
+              <li>Velocity: <span class="velocity-data"></span> mph</li>
+            </ul>
+          </div>
         </div>
       </div>
       <div class="container-info">
         <ul>
           <li>
             <a href="https://leafletjs.com/reference.html" target="_blank" title="Visit Leaflet Maps">Leaflet Maps<i
-                class="fa-solid fa-up-right-from-square"></i></a>
+                class="fa-solid fa-up-right-from-square" aria-hidden="true"></i></a>
             <p>A JavaScript library used for all the mapping done. ISS data was pulled via an api from the site below.
               Coordinates are
               plotted from the latitude and longitude. The icon is a .png of the ISS used in place of the default
@@ -51,7 +56,7 @@
           </li>
           <li>
             <a href="https://wheretheiss.at/w/developer" target="_blank" title="Visit Where the ISS at?">Where the ISS
-              at?<i class="fa-solid fa-up-right-from-square"></i></a>
+              at?<i class="fa-solid fa-up-right-from-square" aria-hidden="true"></i></a>
             <p>The api used to get the data of the ISS. You can get information (current or previous) like latitude and
               longitude, velocity, altitude, visibility, along with some other data too. ISS data is fetched on their
               end every second using the same id number that NORAD has cateloged for it.

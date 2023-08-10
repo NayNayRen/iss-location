@@ -51,7 +51,7 @@ body {
 
 .container-info ul {
   list-style-type: none;
-  padding: 15px;
+  padding: 35px 15px;
 }
 
 .container ul p {
@@ -174,7 +174,30 @@ header h1 {
   width: 675px;
 }
 
-.map-container-data {
+.map-data-button {
+  display: none;
+}
+
+.map-data-container {
+  -webkit-transition: -webkit-transform 250ms ease;
+  background-color: #fff;
+  border-right: solid 1px #000;
+  border-top-right-radius: 5px;
+  border-top: solid 1px #000;
+  bottom: 0;
+  color: #000;
+  height: auto;
+  left: 0;
+  padding: 5px 10px;
+  position: absolute;
+  transition: -webkit-transform 250ms ease;
+  transition: transform 250ms ease, -webkit-transform 250ms ease;
+  transition: transform 250ms ease;
+  width: 450px;
+  z-index: 2;
+}
+
+.map-data-container div {
   -ms-flex-align: center;
   -ms-flex-direction: row;
   -ms-flex-pack: justify;
@@ -182,27 +205,17 @@ header h1 {
   -webkit-box-direction: normal;
   -webkit-box-orient: horizontal;
   -webkit-box-pack: justify;
-  -webkit-box-shadow: 0 0 5px #000;
   align-items: center;
-  background-color: #fff;
-  border-top-right-radius: 5px;
-  bottom: 0;
-  box-shadow: 0 0 5px #000;
-  color: #000;
   display: -ms-flexbox;
   display: -webkit-box;
   display: flex;
   flex-direction: row;
-  height: auto;
   justify-content: space-between;
-  left: 0;
-  padding: 5px;
-  position: absolute;
-  width: 450px;
-  z-index: 2;
+  position: relative;
+  /* outline: solid 1px blue; */
 }
 
-.map-container-data ul {
+.map-data-container ul {
   font-size: 14px;
   list-style-type: none;
 }
@@ -230,7 +243,7 @@ header h1 {
   }
 
   .container-info ul {
-    padding: 10px;
+    padding: 35px 10px;
   }
 
   .container ul p {
@@ -280,7 +293,41 @@ header h1 {
     width: 95%;
   }
 
-  .map-container-data {
+  .map-data-button {
+    -ms-flex-align: center;
+    -ms-flex-pack: center;
+    -webkit-box-align: center;
+    -webkit-box-pack: center;
+    align-items: center;
+    background-color: #fff;
+    border-right: solid 1px #000;
+    border-top-right-radius: 5px;
+    border-top: solid 1px #000;
+    cursor: pointer;
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: flex;
+    font-size: 24px;
+    height: 35px;
+    justify-content: center;
+    left: -10px;
+    position: absolute;
+    top: -40px;
+    width: 45px;
+  }
+
+  .map-data-container-toggle {
+    -webkit-transform: translateY(-100%);
+    transform: translateY(-100%);
+  }
+
+  .map-data-container {
+    bottom: auto;
+    top: 100%;
+    width: 225px;
+  }
+
+  .map-data-container div {
     -ms-flex-align: start;
     -ms-flex-direction: column;
     -webkit-box-align: start;
@@ -288,8 +335,6 @@ header h1 {
     -webkit-box-orient: vertical;
     align-items: flex-start;
     flex-direction: column;
-    padding: 5px;
-    width: 225px;
   }
 
   .main h2 {
