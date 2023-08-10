@@ -46,7 +46,9 @@ async function showStationData() {
     map.removeLayer(marker);
   }
   marker = L.marker([latitude, longitude], {
-    icon: issIcon
+    icon: issIcon,
+    alt: 'ISS Icon',
+    title: 'ISS Icon'
   });
   map.setView([latitude, longitude]);
   marker.addTo(map);
