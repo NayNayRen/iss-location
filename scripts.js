@@ -7,6 +7,8 @@ const longitudeData = document.querySelector('.longitude-data');
 const altitudeData = document.querySelector('.altitude-data');
 const velocityData = document.querySelector('.velocity-data');
 const mapDataButton = document.querySelector('.map-data-button');
+const latDirection = document.querySelector('.lat-direction');
+const lngDirection = document.querySelector('.lng-direction');
 const mapDataContainer = document.querySelector('.map-data-container');
 let map = new L.map('map', {
   center: [0, 0],
@@ -38,6 +40,16 @@ async function showStationData() {
   let longitude = data.longitude;
   let height = Math.round(kilometersToMiles(data.altitude) * 1) / 1;
   let speed = Math.round(kilometersToMiles(data.velocity) * 1) / 1;
+  if (latitude > 0) {
+    latDirection.innerText = 'N';
+  } else {
+    latDirection.innerText = 'S';
+  }
+  if (longitude > 0) {
+    lngDirection.innerText = 'E';
+  } else {
+    lngDirection.innerText = 'W';
+  }
   latitudeData.innerText = Math.round(latitude * 100) / 100;
   longitudeData.innerText = Math.round(longitude * 100) / 100;
   altitudeData.innerText = height;
