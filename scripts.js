@@ -10,16 +10,21 @@ const mapDataButton = document.querySelector('.map-data-button');
 const latDirection = document.querySelector('.lat-direction');
 const lngDirection = document.querySelector('.lng-direction');
 const mapDataContainer = document.querySelector('.map-data-container');
+const currentDate = document.querySelector('.current-date');
+const currentTime = document.querySelector('.current-time');
+const positionGroups = [];
+const positions = [];
+
 let map = new L.map('map', {
   center: [0, 0],
-  zoom: 2,
+  zoom: 4,
   scrollWheelZoom: false
 });
 const issIcon = L.icon({
   iconUrl: "img/iss.png",
-  iconSize: [50, 42],
+  iconSize: [55, 47],
   // [x, y] axis movements
-  iconAnchor: [20, 20],
+  iconAnchor: [25, 25],
   popupAnchor: [0, -10]
 });
 
@@ -35,11 +40,20 @@ async function getStationData() {
 }
 
 async function showStationData() {
+  let now = new Date();
   let data = await getStationData();
-  let latitude = data.latitude;
-  let longitude = data.longitude;
+  let latitude = Math.round(data.latitude * 100) / 100;
+  let longitude = Math.round(data.longitude * 100) / 100;
   let height = Math.round(kilometersToMiles(data.altitude) * 1) / 1;
   let speed = Math.round(kilometersToMiles(data.velocity) * 1) / 1;
+  positions.push(new L.LatLng(latitude, longitude));
+  positionGroups.push(positions);
+  let issPath = new L.polyline(positionGroups, {
+    color: 'red',
+    smoothFactor: 3,
+    stroke: true
+  });
+
   if (latitude > 0) {
     latDirection.innerText = 'N';
   } else {
@@ -50,13 +64,18 @@ async function showStationData() {
   } else {
     lngDirection.innerText = 'W';
   }
-  latitudeData.innerText = Math.round(latitude * 100) / 100;
-  longitudeData.innerText = Math.round(longitude * 100) / 100;
+
+  latitudeData.innerText = latitude;
+  longitudeData.innerText = longitude;
   altitudeData.innerText = height;
   velocityData.innerText = speed.toLocaleString('en-US');
+  currentDate.innerText = now.toLocaleDateString();
+  currentTime.innerText = now.toLocaleTimeString();
+
   if (marker !== null) {
     map.removeLayer(marker);
   }
+
   marker = L.marker([latitude, longitude], {
     icon: issIcon,
     alt: 'ISS Icon',
@@ -65,8 +84,10 @@ async function showStationData() {
   map.setView([latitude, longitude]);
   marker.addTo(map);
   layer.addTo(map);
+  issPath.addTo(map);
 }
-setInterval(showStationData, 5000);
+
+setInterval(showStationData, 2000);
 
 // window.onload = showStationData;
 window.addEventListener('load', () => {

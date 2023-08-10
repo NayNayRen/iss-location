@@ -61,6 +61,22 @@ body {
   text-shadow: 0 2px 2px #000;
 }
 
+.current-time-container ul {
+  -ms-flex-direction: row;
+  -ms-flex-pack: justify;
+  -webkit-box-direction: normal;
+  -webkit-box-orient: horizontal;
+  -webkit-box-pack: justify;
+  display: -ms-flexbox;
+  display: -webkit-box;
+  display: flex;
+  flex-direction: row;
+  font-size: 14px;
+  justify-content: space-between;
+  list-style-type: none;
+  position: relative;
+}
+
 footer {
   -ms-flex-align: center;
   -ms-flex-direction: row;
@@ -179,6 +195,9 @@ header h1 {
 }
 
 .map-data-container {
+  -ms-flex-direction: column;
+  -webkit-box-direction: normal;
+  -webkit-box-orient: vertical;
   -webkit-transition: -webkit-transform 250ms ease;
   background-color: #fff;
   border-right: solid 1px #000;
@@ -186,9 +205,13 @@ header h1 {
   border-top: solid 1px #000;
   bottom: 0;
   color: #000;
+  display: -ms-flexbox;
+  display: -webkit-box;
+  display: flex;
+  flex-direction: column;
   height: auto;
   left: 0;
-  padding: 5px 10px;
+  padding: 10px;
   position: absolute;
   transition: -webkit-transform 250ms ease;
   transition: transform 250ms ease, -webkit-transform 250ms ease;
@@ -197,7 +220,7 @@ header h1 {
   z-index: 2;
 }
 
-.map-data-container div {
+.map-data {
   -ms-flex-align: center;
   -ms-flex-direction: row;
   -ms-flex-pack: justify;
@@ -211,11 +234,10 @@ header h1 {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  position: relative;
   /* outline: solid 1px blue; */
 }
 
-.map-data-container ul {
+.map-data ul {
   font-size: 14px;
   list-style-type: none;
 }
@@ -278,6 +300,13 @@ header h1 {
     opacity: 1;
   }
 
+  .current-time-container ul {
+    -ms-flex-direction: column;
+    -webkit-box-direction: normal;
+    -webkit-box-orient: vertical;
+    flex-direction: column;
+  }
+
   header h1 {
     font-size: 24px;
     text-align: left;
@@ -310,9 +339,9 @@ header h1 {
     font-size: 24px;
     height: 35px;
     justify-content: center;
-    left: -10px;
+    left: 0;
     position: absolute;
-    top: -40px;
+    top: -35px;
     width: 45px;
   }
 
@@ -323,11 +352,12 @@ header h1 {
 
   .map-data-container {
     bottom: auto;
+    padding: 5px 10px;
     top: 100%;
-    width: 225px;
+    width: 250px;
   }
 
-  .map-data-container div {
+  .map-data {
     -ms-flex-align: start;
     -ms-flex-direction: column;
     -webkit-box-align: start;
@@ -373,9 +403,7 @@ header h1 {
   }
 
   #map-container {
-    -webkit-box-shadow: none;
     border-radius: 0;
-    box-shadow: none;
     height: 250px;
     width: 100%;
   }
