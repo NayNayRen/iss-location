@@ -17,6 +17,7 @@ const positions = [];
 
 let map = new L.map('map', {
   center: [0, 0],
+  dragging: false,
   scrollWheelZoom: false,
   // trackResize: true,
   zoom: 3
@@ -51,8 +52,9 @@ async function showStationData() {
   positionGroups.push(positions);
   let issPath = new L.polyline(positionGroups, {
     color: '#FF0000',
-    // smoothFactor: 3,
-    stroke: true
+    smoothFactor: 5,
+    stroke: true,
+    // weight: 2
   });
 
   if (latitude > 0) {
