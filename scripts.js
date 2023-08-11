@@ -17,8 +17,9 @@ const positions = [];
 
 let map = new L.map('map', {
   center: [0, 0],
-  zoom: 4,
-  scrollWheelZoom: false
+  scrollWheelZoom: false,
+  // trackResize: true,
+  zoom: 3
 });
 const issIcon = L.icon({
   iconUrl: "img/iss.png",
@@ -49,8 +50,8 @@ async function showStationData() {
   positions.push(new L.LatLng(latitude, longitude));
   positionGroups.push(positions);
   let issPath = new L.polyline(positionGroups, {
-    color: 'red',
-    smoothFactor: 3,
+    color: '#FF0000',
+    // smoothFactor: 3,
     stroke: true
   });
 

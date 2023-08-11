@@ -16,20 +16,21 @@ body {
   -webkit-box-orient: vertical;
   -webkit-box-pack: center;
   align-items: flex-start;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.75);
   display: -ms-flexbox;
   display: -webkit-box;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: 20px auto 0 auto;
-  width: 675px;
+  margin: 0 auto;
+  width: 725px;
   /* outline: solid 1px blue; */
 }
 
 .container-info a {
   -webkit-transition: opacity 150ms ease;
   color: #87CEEB;
+  display: block;
   font-size: 22px;
   opacity: 1;
   text-shadow: 0 2px 2px #000;
@@ -45,21 +46,29 @@ body {
   opacity: 0.75;
 }
 
-.container-info li:first-of-type {
+.container-info li {
   margin-bottom: 10px;
+}
+
+.container-info li:last-of-type {
+  margin-bottom: 0;
+}
+
+.container-info p {
+  color: #fff;
+  font-size: 18px;
+  padding-left: 10px;
+  text-shadow: 0 2px 2px #000;
 }
 
 .container-info ul {
   list-style-type: none;
-  padding: 35px 15px;
+  padding: 15px 15px 35px 15px;
 }
 
-.container ul p {
-  color: #fff;
-  font-size: 16px;
-  padding-left: 10px;
-  text-shadow: 0 2px 2px #000;
-}
+/* .container-info:first-of-type ul:first-of-type {
+  padding: 10px 15px 35px 15px;
+} */
 
 .current-time-container ul {
   -ms-flex-direction: row;
@@ -150,7 +159,16 @@ header h1 {
   -webkit-box-pack: center;
   align-items: center;
   background-attachment: fixed;
-  background-image: url("../img/earth-bg.webp");
+  background-image: -webkit-gradient(linear,
+      left top, right top,
+      from(rgba(0, 0, 0, 0.75)),
+      to(rgba(0, 0, 0, 0.25))),
+    url("../img/earth-bg.webp");
+  background-image: linear-gradient(90deg,
+      rgba(0, 0, 0, 0.75),
+      rgba(0, 0, 0, 0.25)),
+    url("../img/earth-bg.webp");
+  /* background-image: url("../img/earth-bg.webp"); */
   background-position: center;
   background-size: cover;
   display: -ms-flexbox;
@@ -162,13 +180,26 @@ header h1 {
   padding: 110px 0 20px 0;
 }
 
+.main h1 {
+  color: #87CEEB;
+  font-size: 30px;
+  margin: auto;
+  padding: 10px;
+  text-align: left;
+  text-shadow: 0 2px 2px #000;
+  width: 725px;
+  /* outline: solid 1px blue; */
+}
+
 .main h2 {
   color: #fff;
   font-size: 24px;
+  margin: auto;
   padding: 10px;
-  text-align: center;
+  text-align: left;
   text-shadow: 0 2px 2px #000;
-  width: 100%;
+  width: 725px;
+  /* outline: solid 1px blue; */
 }
 
 #map {
@@ -260,16 +291,21 @@ header h1 {
     width: 100%;
   }
 
+  .container-info {
+    width: 675px;
+  }
+
   .container-info a {
     font-size: 20px;
   }
 
-  .container-info ul {
-    padding: 35px 10px;
+  .container-info p {
+    font-size: 16px;
+    padding-left: 10px;
   }
 
-  .container ul p {
-    padding-left: 10px;
+  .container-info ul {
+    padding: 10px 10px 20px 10px;
   }
 
   header h1 {
@@ -285,8 +321,14 @@ header h1 {
     padding: 100px 0 40px 0;
   }
 
+  .main h1 {
+    font-size: 26px;
+    width: 675px;
+  }
+
   .main h2 {
-    font-size: 20px;
+    font-size: 22px;
+    width: 675px;
   }
 }
 
@@ -367,16 +409,26 @@ header h1 {
     flex-direction: column;
   }
 
+  .main h1 {
+    width: 95%;
+  }
+
   .main h2 {
-    font-size: 18px;
+    /* font-size: 20px; */
+    width: 95%
   }
 }
 
 @media(max-width:400px) {
 
   .container-info {
+    background-color: rgba(0, 0, 0, 0.5);
     margin: 0;
     width: 100%;
+  }
+
+  .container-info:last-of-type ul:last-of-type {
+    padding: 0 10px 20px 10px;
   }
 
   .footer-logo,
@@ -390,12 +442,33 @@ header h1 {
   }
 
   .main {
-    background-image: url("../img/earth-bg-mobile.webp");
-    padding: 130px 0 0 0;
+    background-image: -webkit-gradient(linear,
+        left top, right top,
+        from(rgba(0, 0, 0, 0.75)),
+        to(rgba(0, 0, 0, 0.25))),
+      url("../img/earth-bg-mobile.webp");
+    background-image: linear-gradient(90deg,
+        rgba(0, 0, 0, 0.75),
+        rgba(0, 0, 0, 0.25)),
+      url("../img/earth-bg-mobile.webp");
+    /* background-image: url("../img/earth-bg-mobile.webp"); */
+    padding: 100px 0 0 0;
+  }
+
+  .main h1 {
+    background-color: rgba(0, 0, 0, 0.5);
+    font-size: 22px;
+    padding-top: 20px;
+    width: 100%
   }
 
   .main h2 {
-    text-align: left;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%
+  }
+
+  .main h2:last-of-type {
+    padding-top: 30px;
   }
 
   #map {
