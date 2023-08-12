@@ -66,10 +66,6 @@ body {
   padding: 15px 15px 35px 15px;
 }
 
-/* .container-info:first-of-type ul:first-of-type {
-  padding: 10px 15px 35px 15px;
-} */
-
 .current-time-container ul {
   -ms-flex-direction: row;
   -ms-flex-pack: justify;
@@ -168,7 +164,6 @@ header h1 {
       rgba(0, 0, 0, 0.75),
       rgba(0, 0, 0, 0.25)),
     url("../img/earth-bg.webp");
-  /* background-image: url("../img/earth-bg.webp"); */
   background-position: center;
   background-size: cover;
   display: -ms-flexbox;
@@ -284,6 +279,45 @@ header h1 {
 .popup span {
   color: #ff0000;
   margin-top: 5px;
+}
+
+.up-arrow {
+  -ms-flex-align: center;
+  -ms-flex-pack: center;
+  -webkit-box-align: center;
+  -webkit-box-pack: center;
+  -webkit-box-shadow: 0 0 5px #000;
+  -webkit-transition: right 250ms ease;
+  align-items: center;
+  background-color: #fff;
+  border-bottom-left-radius: 5px;
+  border-top-left-radius: 5px;
+  bottom: 95px;
+  box-shadow: 0 0 5px #000;
+  display: -ms-flexbox;
+  display: -webkit-box;
+  display: flex;
+  font-size: 35px;
+  height: 55px;
+  justify-content: center;
+  position: fixed;
+  right: -60px;
+  text-decoration: none;
+  transition: right 250ms ease;
+  width: 55px;
+  z-index: 5;
+}
+
+.up-arrow i {
+  -webkit-transform: rotate(135deg);
+  -webkit-transition: color 150ms ease;
+  color: #000;
+  transform: rotate(135deg);
+  transition: color 150ms ease;
+}
+
+.up-arrow:hover i {
+  color: #87CEEB;
 }
 
 @media(max-width: 1000px) {
@@ -417,6 +451,17 @@ header h1 {
     /* font-size: 20px; */
     width: 95%
   }
+
+  .up-arrow {
+    bottom: 80px;
+    font-size: 26px;
+    height: 45px;
+    width: 45px;
+  }
+
+  .up-arrow:hover i {
+    color: #000;
+  }
 }
 
 @media(max-width:400px) {
@@ -479,5 +524,9 @@ header h1 {
     border-radius: 0;
     height: 250px;
     width: 100%;
+  }
+
+  .up-arrow {
+    bottom: 70px;
   }
 }

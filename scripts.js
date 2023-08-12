@@ -14,6 +14,7 @@ const currentDate = document.querySelector('.current-date');
 const currentTime = document.querySelector('.current-time');
 const positionGroups = [];
 const positions = [];
+const upArrow = document.querySelector('.up-arrow');
 
 let map = new L.map('map', {
   center: [0, 0],
@@ -92,10 +93,28 @@ async function showStationData() {
 
 setInterval(showStationData, 2000);
 
+// show and hide up arrow
+function activateUpArrow() {
+  if (document.documentElement.scrollTop > 0) {
+    upArrow.style.right = "-2px";
+  } else {
+    upArrow.style.right = "-60px";
+  }
+}
+
 // window.onload = showStationData;
 window.addEventListener('load', () => {
   showStationData();
+  activateUpArrow();
   mapDataButton.addEventListener('click', () => {
     mapDataContainer.classList.toggle('map-data-container-toggle');
   });
+});
+
+window.addEventListener('resize', () => {
+  activateUpArrow();
+});
+
+window.addEventListener('scroll', () => {
+  activateUpArrow();
 });
