@@ -57,28 +57,41 @@
           </li>
         </ul>
       </div>
-      <h2>Current Location</h2>
-      <div id="map-container">
-        <div id="map"></div>
-        <div class="map-data-container">
-          <div class="current-time-container">
-            <span class="map-data-button" aria-label="Map Data Button">
-              <i class="fa-solid fa-bars" aria-hidden="false"></i>
-            </span>
-            <ul>
-              <li>Date: <span class="current-date"></span></li>
-              <li>Time: <span class="current-time"></span> EST</li>
-            </ul>
+      <div class="map-video-container">
+        <div>
+          <h2>Current Location</h2>
+          <div id="map-container">
+            <div id="map"></div>
+            <div class="map-data-container">
+              <div class="current-time-container">
+                <span class="map-data-button" aria-label="Map Data Button">
+                  <i class="fa-solid fa-bars" aria-hidden="false"></i>
+                </span>
+                <ul>
+                  <li>Date: <span class="current-date"></span></li>
+                  <li>Time: <span class="current-time"></span> EST</li>
+                </ul>
+              </div>
+              <div class="map-data">
+                <ul>
+                  <li>Latitude: <span class="latitude-data"></span> <span class="lat-direction"></span></li>
+                  <li>Longitude: <span class="longitude-data"></span> <span class="lng-direction"></span></li>
+                </ul>
+                <ul>
+                  <li>Altitude: <span class="altitude-data"></span> miles</li>
+                  <li>Velocity: <span class="velocity-data"></span> mph</li>
+                </ul>
+              </div>
+            </div>
           </div>
-          <div class="map-data">
-            <ul>
-              <li>Latitude: <span class="latitude-data"></span> <span class="lat-direction"></span></li>
-              <li>Longitude: <span class="longitude-data"></span> <span class="lng-direction"></span></li>
-            </ul>
-            <ul>
-              <li>Altitude: <span class="altitude-data"></span> miles</li>
-              <li>Velocity: <span class="velocity-data"></span> mph</li>
-            </ul>
+        </div>
+        <div>
+          <h2>Live Feed</h2>
+          <div class="video-container">
+            <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/KG6SL6Mf7ak"
+              title="YouTube video player" frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen></iframe>
           </div>
         </div>
       </div>
