@@ -53,11 +53,11 @@
           </li>
           <li>
             <p>
-              More information on the station:
+              More ISS information:
               <a href="https://www.nasa.gov/mission_pages/station/main/index.html" target="_blank"
                 title="Visit ISS Website">NASA ISS Website<i class="fa-solid fa-up-right-from-square"
                   aria-hidden="true"></i></a>
-              More information on NASA:
+              More NASA information:
               <a href="https://www.nasa.gov/" target="_blank" title="Visit NASA Website">NASA Website<i
                   class="fa-solid fa-up-right-from-square" aria-hidden="true"></i></a>
             </p>
@@ -67,7 +67,7 @@
       <div class="map-video-container">
         <div>
           <h2 class="container-heading">Current Location</h2>
-          <div id="map-container">
+          <div class="map-container">
             <div id="map"></div>
             <div class="map-data-container">
               <div class="current-time-container">
@@ -75,18 +75,20 @@
                   <i class="fa-solid fa-bars" aria-hidden="false"></i>
                 </span>
                 <ul>
-                  <li>Date: <span class="current-date"></span></li>
-                  <li>Time: <span class="current-time"></span> EST</li>
+                  <li><span class="map-data-title">Date:</span> <span class="current-date"></span></li>
+                  <li><span class="map-data-title">Time:</span> <span class="current-time"></span> EST</li>
                 </ul>
               </div>
               <div class="map-data">
                 <ul>
-                  <li>Latitude: <span class="latitude-data"></span> <span class="lat-direction"></span></li>
-                  <li>Longitude: <span class="longitude-data"></span> <span class="lng-direction"></span></li>
+                  <li><span class="map-data-title">Latitude:</span> <span class="latitude-data"></span> <span
+                      class="lat-direction"></span></li>
+                  <li><span class="map-data-title">Longitude:</span> <span class="longitude-data"></span> <span
+                      class="lng-direction"></span></li>
                 </ul>
                 <ul>
-                  <li>Altitude: <span class="altitude-data"></span> miles</li>
-                  <li>Velocity: <span class="velocity-data"></span> mph</li>
+                  <li><span class="map-data-title">Altitude:</span> <span class="altitude-data"></span> miles</li>
+                  <li><span class="map-data-title">Velocity:</span> <span class="velocity-data"></span> mph</li>
                 </ul>
               </div>
             </div>
@@ -96,15 +98,13 @@
         <div class="video-container">
           <div class="video">
             <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/KG6SL6Mf7ak"
-              title="YouTube Video Player Surface View" frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowfullscreen></iframe>
+              title="YouTube Video Player Surface View" frameborder="0" allowfullscreen></iframe>
+            <div class="video-view">Surface</div>
           </div>
           <div class="video">
             <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/xAieE-QtOeM"
-              title="YouTube Video Player Horizon View" frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowfullscreen></iframe>
+              title="YouTube Video Player Horizon View" frameborder="0" allowfullscreen></iframe>
+            <div class="video-view">Horizon</div>
           </div>
         </div>
       </div>

@@ -1,7 +1,7 @@
 // set marker to null for easy removal
 let marker = null;
 let testMarker = L.marker([0, 0]);
-let layer = L.tileLayer('https://{s}.tile.osm.org/{z}/{x}/{y}.png');
+let layer = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}');
 const latitudeData = document.querySelector('.latitude-data');
 const longitudeData = document.querySelector('.longitude-data');
 const altitudeData = document.querySelector('.altitude-data');
@@ -39,7 +39,7 @@ function kilometersToMiles(kilometers) {
 async function getStationData() {
   let res = await fetch('https://api.wheretheiss.at/v1/satellites/25544');
   let data = await res.json();
-  return data;
+  return await data;
 }
 
 async function showStationData() {
@@ -53,8 +53,6 @@ async function showStationData() {
   positionGroups.push(positions);
   let issPath = new L.polyline(positionGroups, {
     color: '#FF0000',
-    smoothFactor: 2,
-    stroke: true,
     weight: 2
   });
 
