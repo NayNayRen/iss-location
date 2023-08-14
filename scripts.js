@@ -53,9 +53,9 @@ async function showStationData() {
   positionGroups.push(positions);
   let issPath = new L.polyline(positionGroups, {
     color: '#FF0000',
-    smoothFactor: 5,
+    smoothFactor: 2,
     stroke: true,
-    // weight: 2
+    weight: 2
   });
 
   if (latitude > 0) {
@@ -90,7 +90,6 @@ async function showStationData() {
   layer.addTo(map);
   issPath.addTo(map);
 }
-
 setInterval(showStationData, 2000);
 
 // show and hide up arrow

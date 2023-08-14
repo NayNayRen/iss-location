@@ -7,19 +7,15 @@ body {
   /* outline: solid 1px red; */
 }
 
-.container-heading,
-.things-used-heading {
+.container-heading {
   color: #fff;
   font-size: 24px;
   margin: auto;
-  padding: 10px 10px 10px 0;
-  text-align: left;
+  padding: 30px 10px 10px 10px;
+  text-align: center;
   text-shadow: 0 2px 2px #000;
-  /* outline: solid 1px blue; */
-}
-
-.container-heading {
   width: 675px;
+  /* outline: solid 1px blue; */
 }
 
 .container-info {
@@ -44,16 +40,19 @@ body {
 
 .container-info a {
   -webkit-transition: opacity 150ms ease;
-  color: #87CEEB;
+  color: #53aad0;
   display: block;
-  font-size: 22px;
+  font-size: 20px;
+  font-style: italic;
   opacity: 1;
   text-shadow: 0 2px 2px #000;
   transition: opacity 150ms ease;
+  width: 100%;
+  /* outline: solid 1px red; */
 }
 
 .container-info i {
-  font-size: 16px;
+  font-size: 14px;
   margin-left: 10px;
 }
 
@@ -274,18 +273,13 @@ header h1 {
 }
 
 .map-video-container {
-  -ms-flex-direction: row;
-  -ms-flex-pack: space-evenly;
-  -ms-flex-wrap: wrap;
+  -ms-flex-direction: column;
   -webkit-box-direction: normal;
-  -webkit-box-orient: horizontal;
-  -webkit-box-pack: space-evenly;
+  -webkit-box-orient: vertical;
   display: -ms-flexbox;
   display: -webkit-box;
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
+  flex-direction: column;
   width: 100%;
   /* outline: solid 1px blue; */
 }
@@ -301,10 +295,6 @@ header h1 {
 .popup span {
   color: #ff0000;
   margin-top: 5px;
-}
-
-.things-used-heading {
-  width: 900px;
 }
 
 .up-arrow {
@@ -346,38 +336,49 @@ header h1 {
   color: #87CEEB;
 }
 
-.video-container {
+.video {
   -webkit-box-shadow: 0 0 20px #000;
   border-radius: 5px;
   border: solid 1px #000;
   box-shadow: 0 0 20px #000;
   height: 400px;
-  margin: 0 auto;
+  margin: 0 auto 20px auto;
   overflow: hidden;
   position: relative;
   width: 675px;
   /* outline: solid 1px blue; */
 }
 
-.video-container iframe {
+.video iframe {
   height: 100%;
   width: 100%;
 }
 
+.video-container {
+  -ms-flex-direction: row;
+  -ms-flex-pack: space-evenly;
+  -ms-flex-wrap: wrap;
+  -webkit-box-direction: normal;
+  -webkit-box-orient: horizontal;
+  -webkit-box-pack: space-evenly;
+  display: -ms-flexbox;
+  display: -webkit-box;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  width: 100%;
+  /* outline: solid 1px blue; */
+}
+
 @media(max-width: 1000px) {
 
-  .container-heading,
-  .things-used-heading {
+  .container-heading {
     font-size: 22px;
-    width: 675px;
   }
 
   .container-info {
     width: 675px;
-  }
-
-  .container-info a {
-    font-size: 20px;
   }
 
   .container-info p {
@@ -410,8 +411,7 @@ header h1 {
 
 @media(max-width:700px) {
 
-  .container-heading,
-  .things-used-heading {
+  .container-heading {
     width: 95%
   }
 
@@ -441,7 +441,7 @@ header h1 {
   }
 
   #map-container,
-  .video-container {
+  .video {
     height: 300px;
     width: 95%;
   }
@@ -491,13 +491,6 @@ header h1 {
     flex-direction: column;
   }
 
-  .map-video-container {
-    -ms-flex-direction: column;
-    -webkit-box-direction: normal;
-    -webkit-box-orient: vertical;
-    flex-direction: column;
-  }
-
   .main h1 {
     width: 95%;
   }
@@ -512,14 +505,20 @@ header h1 {
   .up-arrow:hover i {
     color: #000;
   }
+
+  .video-container {
+    -ms-flex-direction: column;
+    -webkit-box-direction: normal;
+    -webkit-box-orient: vertical;
+    flex-direction: column;
+  }
 }
 
 @media(max-width:400px) {
 
-  .container-heading,
-  .things-used-heading {
+  .container-heading {
     background-color: rgba(0, 0, 0, 0.5);
-    padding: 10px;
+    padding: 30px 10px 5px 10px;
     width: 100%
   }
 
@@ -558,13 +557,8 @@ header h1 {
 
   .main h1 {
     background-color: rgba(0, 0, 0, 0.5);
-    font-size: 22px;
     padding-top: 20px;
     width: 100%
-  }
-
-  .main h2:last-of-type {
-    padding-top: 30px;
   }
 
   #map {
@@ -572,7 +566,7 @@ header h1 {
   }
 
   #map-container,
-  .video-container {
+  .video {
     border-radius: 0;
     height: 250px;
     width: 100%;
@@ -580,5 +574,9 @@ header h1 {
 
   .up-arrow {
     bottom: 70px;
+  }
+
+  .video-container {
+    background-color: rgba(0, 0, 0, 0.5);
   }
 }
