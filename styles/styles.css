@@ -92,6 +92,7 @@ body {
   display: flex;
   flex-direction: row;
   font-size: 14px;
+  font-style: italic;
   justify-content: space-between;
   list-style-type: none;
   position: relative;
@@ -263,6 +264,7 @@ header h1 {
   display: -webkit-box;
   display: flex;
   flex-direction: row;
+  font-style: italic;
   justify-content: space-between;
   /* outline: solid 1px blue; */
 }
@@ -284,7 +286,6 @@ header h1 {
   display: -webkit-box;
   display: flex;
   flex-direction: column;
-  font-style: italic;
   width: 100%;
   /* outline: solid 1px blue; */
 }
