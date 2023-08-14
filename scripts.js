@@ -20,7 +20,7 @@ let map = new L.map('map', {
   center: [0, 0],
   dragging: false,
   scrollWheelZoom: false,
-  // trackResize: true,
+  trackResize: true,
   zoom: 3
 });
 const issIcon = L.icon({
@@ -49,12 +49,19 @@ async function showStationData() {
   let longitude = Math.round(data.longitude * 100) / 100;
   let height = Math.round(kilometersToMiles(data.altitude) * 1) / 1;
   let speed = Math.round(kilometersToMiles(data.velocity) * 1) / 1;
-  positions.push(new L.LatLng(latitude, longitude));
-  positionGroups.push(positions);
   let issPath = new L.polyline(positionGroups, {
     color: '#FF0000',
+    // smoothFactor: 5,
+    stroke: true,
     weight: 2
   });
+
+  positions.push(new L.LatLng(latitude, longitude));
+  if (positions.length > 2) {
+    positions.shift();
+    // console.log(positions);
+  }
+  positionGroups.push(positions);
 
   if (latitude > 0) {
     latDirection.innerText = 'N';
