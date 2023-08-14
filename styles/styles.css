@@ -7,6 +7,21 @@ body {
   /* outline: solid 1px red; */
 }
 
+.container-heading,
+.things-used-heading {
+  color: #fff;
+  font-size: 24px;
+  margin: auto;
+  padding: 10px 10px 10px 0;
+  text-align: left;
+  text-shadow: 0 2px 2px #000;
+  /* outline: solid 1px blue; */
+}
+
+.container-heading {
+  width: 675px;
+}
+
 .container-info {
   -ms-flex-align: start;
   -ms-flex-direction: column;
@@ -23,7 +38,7 @@ body {
   flex-direction: column;
   justify-content: center;
   margin: 0 auto;
-  width: 725px;
+  width: 900px;
   /* outline: solid 1px blue; */
 }
 
@@ -47,7 +62,8 @@ body {
 }
 
 .container-info li {
-  margin-bottom: 10px;
+  margin-bottom: 30px;
+  /* outline: solid 1px blue; */
 }
 
 .container-info li:last-of-type {
@@ -182,18 +198,7 @@ header h1 {
   padding: 10px;
   text-align: left;
   text-shadow: 0 2px 2px #000;
-  width: 725px;
-  /* outline: solid 1px blue; */
-}
-
-.main h2 {
-  color: #fff;
-  font-size: 24px;
-  margin: auto;
-  padding: 10px;
-  text-align: left;
-  text-shadow: 0 2px 2px #000;
-  width: 725px;
+  width: 900px;
   /* outline: solid 1px blue; */
 }
 
@@ -270,17 +275,17 @@ header h1 {
 
 .map-video-container {
   -ms-flex-direction: row;
-  -ms-flex-pack: center;
+  -ms-flex-pack: space-evenly;
   -ms-flex-wrap: wrap;
   -webkit-box-direction: normal;
   -webkit-box-orient: horizontal;
-  -webkit-box-pack: center;
+  -webkit-box-pack: space-evenly;
   display: -ms-flexbox;
   display: -webkit-box;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-evenly;
   width: 100%;
   /* outline: solid 1px blue; */
 }
@@ -296,6 +301,10 @@ header h1 {
 .popup span {
   color: #ff0000;
   margin-top: 5px;
+}
+
+.things-used-heading {
+  width: 900px;
 }
 
 .up-arrow {
@@ -356,6 +365,13 @@ header h1 {
 }
 
 @media(max-width: 1000px) {
+
+  .container-heading,
+  .things-used-heading {
+    font-size: 22px;
+    width: 675px;
+  }
+
   .container-info {
     width: 675px;
   }
@@ -390,14 +406,15 @@ header h1 {
     font-size: 26px;
     width: 675px;
   }
-
-  .main h2 {
-    font-size: 22px;
-    width: 675px;
-  }
 }
 
 @media(max-width:700px) {
+
+  .container-heading,
+  .things-used-heading {
+    width: 95%
+  }
+
   .container-info {
     width: 95%;
   }
@@ -485,10 +502,6 @@ header h1 {
     width: 95%;
   }
 
-  .main h2 {
-    width: 95%
-  }
-
   .up-arrow {
     bottom: 80px;
     font-size: 26px;
@@ -502,6 +515,14 @@ header h1 {
 }
 
 @media(max-width:400px) {
+
+  .container-heading,
+  .things-used-heading {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    width: 100%
+  }
+
   .container-info {
     background-color: rgba(0, 0, 0, 0.5);
     margin: 0;
@@ -539,11 +560,6 @@ header h1 {
     background-color: rgba(0, 0, 0, 0.5);
     font-size: 22px;
     padding-top: 20px;
-    width: 100%
-  }
-
-  .main h2 {
-    background-color: rgba(0, 0, 0, 0.5);
     width: 100%
   }
 
