@@ -20,7 +20,7 @@ let map = new L.map('map', {
   center: [0, 0],
   dragging: false,
   scrollWheelZoom: false,
-  trackResize: true,
+  // trackResize: true,
   zoom: 3
 });
 const issIcon = L.icon({
@@ -51,7 +51,7 @@ async function showStationData() {
   let speed = Math.round(kilometersToMiles(data.velocity) * 1) / 1;
   let issPath = new L.polyline(positionGroups, {
     color: '#FF0000',
-    // smoothFactor: 5,
+    smoothFactor: 5,
     stroke: true,
     weight: 2
   });

@@ -39,14 +39,14 @@ body {
 }
 
 .container-info a {
-  -webkit-transition: opacity 150ms ease;
+  -webkit-transition: color 150ms ease;
   color: #53aad0;
   display: block;
   font-size: 20px;
   font-style: italic;
   opacity: 1;
   text-shadow: 0 2px 2px #000;
-  transition: opacity 150ms ease;
+  transition: color 150ms ease;
   width: 100%;
   /* outline: solid 1px red; */
 }
@@ -57,7 +57,7 @@ body {
 }
 
 .container-info a:hover {
-  opacity: 0.75;
+  color: #87CEEB;
 }
 
 .container-info li {
@@ -320,7 +320,7 @@ header h1 {
 .up-arrow i {
   -webkit-transform: rotate(135deg);
   -webkit-transition: color 150ms ease;
-  color: #000;
+  color: #53aad0;
   transform: rotate(135deg);
   transition: color 150ms ease;
 }
