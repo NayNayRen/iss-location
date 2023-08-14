@@ -284,6 +284,7 @@ header h1 {
   display: -webkit-box;
   display: flex;
   flex-direction: column;
+  font-style: italic;
   width: 100%;
   /* outline: solid 1px blue; */
 }
@@ -362,7 +363,9 @@ header h1 {
 }
 
 .video-view {
-  background-color: #000;
+  background-color: #fff;
+  border-left: solid 1px #000;
+  border-top: solid 1px #000;
   border-top-left-radius: 5px;
   bottom: 0;
   color: #FF0000;
