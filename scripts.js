@@ -20,7 +20,7 @@ let map = new L.map('map', {
   center: [0, 0],
   dragging: false,
   scrollWheelZoom: false,
-  // trackResize: true,
+  trackResize: true,
   zoom: 3
 });
 const issIcon = L.icon({
@@ -39,7 +39,7 @@ function kilometersToMiles(kilometers) {
 async function getStationData() {
   let res = await fetch('https://api.wheretheiss.at/v1/satellites/25544');
   let data = await res.json();
-  return await data;
+  return data;
 }
 
 async function showStationData() {
@@ -62,39 +62,42 @@ async function showStationData() {
     // console.log(positions);
   }
   positionGroups.push(positions);
-
+  // negative is south posative is north
   if (latitude > 0) {
     latDirection.innerText = 'N';
   } else {
     latDirection.innerText = 'S';
   }
+  // negative is west posative is east
   if (longitude > 0) {
     lngDirection.innerText = 'E';
   } else {
     lngDirection.innerText = 'W';
   }
-
+  // iss data gets displayed
   latitudeData.innerText = latitude;
   longitudeData.innerText = longitude;
   altitudeData.innerText = height;
   velocityData.innerText = speed.toLocaleString('en-US');
   currentDate.innerText = now.toLocaleDateString();
   currentTime.innerText = now.toLocaleTimeString();
-
+  // if marker exists, remove it, used to show only one marker
   if (marker !== null) {
     map.removeLayer(marker);
   }
-
+  // marker location is set
   marker = L.marker([latitude, longitude], {
     icon: issIcon,
     alt: 'ISS Icon',
     title: 'ISS Icon'
   });
+  // layers are added to the map
   map.setView([latitude, longitude]);
   marker.addTo(map);
   layer.addTo(map);
   issPath.addTo(map);
 }
+// function is called every 2 seconds to mimic station movement
 setInterval(showStationData, 2000);
 
 // show and hide up arrow
@@ -106,7 +109,6 @@ function activateUpArrow() {
   }
 }
 
-// window.onload = showStationData;
 window.addEventListener('load', () => {
   showStationData();
   activateUpArrow();
