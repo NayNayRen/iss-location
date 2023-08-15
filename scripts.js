@@ -17,7 +17,7 @@ const positions = [];
 const upArrow = document.querySelector('.up-arrow');
 
 let map = new L.map('map', {
-  center: [0, 0],
+  // center: [0, 0],
   dragging: false,
   scrollWheelZoom: false,
   trackResize: true,
@@ -92,7 +92,8 @@ async function showStationData() {
     title: 'ISS Icon'
   });
   // layers are added to the map
-  map.setView([latitude, longitude]);
+  // map.setView([latitude, longitude]);
+  map.panTo([latitude, longitude]);
   marker.addTo(map);
   layer.addTo(map);
   issPath.addTo(map);
