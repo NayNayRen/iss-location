@@ -439,6 +439,10 @@ header h1 {
     padding: 10px 10px 20px 10px;
   }
 
+  .container-logo {
+    width: 75px;
+  }
+
   header h1 {
     font-size: 30px;
   }
@@ -465,10 +469,6 @@ header h1 {
 
   .container-info a:hover {
     opacity: 1;
-  }
-
-  .container-logo {
-    width: 65px;
   }
 
   .current-time-container ul {
@@ -584,6 +584,10 @@ header h1 {
 
   .container-info:last-of-type ul:last-of-type {
     padding: 0 10px 20px 10px;
+  }
+
+  .container-logo {
+    width: 65px;
   }
 
   #feeds,
