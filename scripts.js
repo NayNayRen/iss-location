@@ -22,7 +22,7 @@ let map = new L.map('map', {
   dragging: false,
   scrollWheelZoom: false,
   trackResize: true,
-  zoom: 4
+  zoom: 3
 });
 const issIcon = L.icon({
   iconUrl: "img/iss.png",

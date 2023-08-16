@@ -254,8 +254,36 @@ header h1 {
 }
 
 .map-data-button {
-  display: none;
+  -ms-flex-align: center;
+  -ms-flex-pack: center;
+  -webkit-box-align: center;
+  -webkit-box-pack: center;
+  align-items: center;
+  background-color: #fff;
+  border-right: solid 1px #000;
+  border-top-right-radius: 5px;
+  border-top: solid 1px #000;
+  bottom: calc(100% + 10px);
+  cursor: pointer;
+  display: -ms-flexbox;
+  display: -webkit-box;
+  display: flex;
+  font-size: 24px;
+  height: 35px;
+  justify-content: center;
+  left: -10px;
+  position: absolute;
+  width: 45px;
 }
+
+.map-data-container-toggle {
+  -webkit-transform: translateY(-100%);
+  transform: translateY(-100%);
+}
+
+/* .map-data-button {
+  display: none;
+} */
 
 .map-data-checkbox:hover {
   cursor: pointer;
@@ -288,7 +316,7 @@ header h1 {
   border-right: solid 1px #000;
   border-top-right-radius: 5px;
   border-top: solid 1px #000;
-  bottom: 0;
+  /* bottom: 0; */
   color: #000;
   display: -ms-flexbox;
   display: -webkit-box;
@@ -298,6 +326,7 @@ header h1 {
   left: 0;
   padding: 10px;
   position: absolute;
+  top: 100%;
   transition: -webkit-transform 250ms ease;
   transition: transform 250ms ease, -webkit-transform 250ms ease;
   transition: transform 250ms ease;
@@ -522,7 +551,7 @@ header h1 {
     width: 95%;
   }
 
-  .map-data-button {
+  /* .map-data-button {
     -ms-flex-align: center;
     -ms-flex-pack: center;
     -webkit-box-align: center;
@@ -548,11 +577,11 @@ header h1 {
   .map-data-container-toggle {
     -webkit-transform: translateY(-100%);
     transform: translateY(-100%);
-  }
+  } */
 
   .map-data-container {
-    bottom: auto;
-    top: 100%;
+    /* bottom: auto;
+    top: 100%; */
     width: 215px;
   }
 
