@@ -137,7 +137,13 @@ window.addEventListener('load', () => {
   activateUpArrow();
   mapDataCheckbox.checked = false;
   mapDataButton.addEventListener('click', () => {
-    mapDataContainer.classList.toggle('map-data-container-toggle');
+    // mapDataContainer.classList.toggle('map-data-container-toggle');
+    if (window.innerWidth > 700) {
+      mapDataContainer.classList.toggle('map-data-container-toggle-fullscreen');
+    }
+    if (window.innerWidth <= 700) {
+      mapDataContainer.classList.toggle('map-data-container-toggle-mobile');
+    }
   });
   mapDataCheckbox.addEventListener('click', () => {
     changeToKilometers();

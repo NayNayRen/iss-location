@@ -87,16 +87,30 @@ body {
 }
 
 .container-logo {
+  -ms-flex-align: end;
+  -ms-flex-direction: row;
+  -webkit-box-align: end;
+  -webkit-box-direction: normal;
+  -webkit-box-orient: horizontal;
+  align-items: flex-end;
   bottom: 10px;
+  display: -ms-flexbox;
+  display: -webkit-box;
+  display: flex;
+  flex-direction: row;
   position: absolute;
   right: 10px;
-  width: 100px;
+  width: 175px;
 
 }
 
 .container-logo img {
   height: auto;
   width: 100%;
+}
+
+.container-logo img:first-of-type {
+  margin: 0 10px 0 0;
 }
 
 .current-time-container {
@@ -276,14 +290,10 @@ header h1 {
   width: 45px;
 }
 
-.map-data-container-toggle {
-  -webkit-transform: translateY(-100%);
-  transform: translateY(-100%);
+.map-data-container-toggle-fullscreen {
+  -webkit-transform: translateY(100%);
+  transform: translateY(100%);
 }
-
-/* .map-data-button {
-  display: none;
-} */
 
 .map-data-checkbox:hover {
   cursor: pointer;
@@ -316,7 +326,7 @@ header h1 {
   border-right: solid 1px #000;
   border-top-right-radius: 5px;
   border-top: solid 1px #000;
-  /* bottom: 0; */
+  bottom: 0;
   color: #000;
   display: -ms-flexbox;
   display: -webkit-box;
@@ -326,7 +336,7 @@ header h1 {
   left: 0;
   padding: 10px;
   position: absolute;
-  top: 100%;
+  /* top: 100%; */
   transition: -webkit-transform 250ms ease;
   transition: transform 250ms ease, -webkit-transform 250ms ease;
   transition: transform 250ms ease;
@@ -386,6 +396,23 @@ header h1 {
 
 .navigation a:hover {
   color: #87CEEB;
+}
+
+.things-container a {
+  position: relative;
+}
+
+.things-logo {
+  bottom: 0;
+  left: 100%;
+  margin-left: 10px;
+  position: absolute;
+  width: 30px;
+}
+
+.things-logo img {
+  height: auto;
+  width: 100%;
 }
 
 
@@ -496,7 +523,7 @@ header h1 {
   }
 
   .container-logo {
-    width: 75px;
+    width: 125px;
   }
 
   header h1 {
@@ -551,37 +578,14 @@ header h1 {
     width: 95%;
   }
 
-  /* .map-data-button {
-    -ms-flex-align: center;
-    -ms-flex-pack: center;
-    -webkit-box-align: center;
-    -webkit-box-pack: center;
-    align-items: center;
-    background-color: #fff;
-    border-right: solid 1px #000;
-    border-top-right-radius: 5px;
-    border-top: solid 1px #000;
-    bottom: calc(100% + 10px);
-    cursor: pointer;
-    display: -ms-flexbox;
-    display: -webkit-box;
-    display: flex;
-    font-size: 24px;
-    height: 35px;
-    justify-content: center;
-    left: -10px;
-    position: absolute;
-    width: 45px;
-  }
-
-  .map-data-container-toggle {
+  .map-data-container-toggle-mobile {
     -webkit-transform: translateY(-100%);
     transform: translateY(-100%);
-  } */
+  }
 
   .map-data-container {
-    /* bottom: auto;
-    top: 100%; */
+    bottom: auto;
+    top: 100%;
     width: 215px;
   }
 
@@ -625,7 +629,7 @@ header h1 {
 @media(max-width:400px) {
 
   .container-heading {
-    padding: 30px 10px 5px 10px;
+    padding: 30px 10px 15px 10px;
     width: 100%
   }
 
@@ -641,7 +645,15 @@ header h1 {
   }
 
   .container-logo {
-    width: 65px;
+    -ms-flex-direction: column;
+    -webkit-box-direction: normal;
+    -webkit-box-orient: vertical;
+    flex-direction: column;
+    width: 55px;
+  }
+
+  .container-logo img:first-of-type {
+    margin: 0 0 10px 0;
   }
 
   #feeds,
@@ -684,6 +696,10 @@ header h1 {
 
   .map-video-container {
     background-color: rgba(0, 0, 0, 0.5);
+  }
+
+  .things-logo {
+    width: 25px;
   }
 
   .up-arrow {
