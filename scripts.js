@@ -13,6 +13,7 @@ const mapDataContainer = document.querySelector('.map-data-container');
 const mapDataCheckbox = document.querySelector('.map-data-checkbox');
 const currentDate = document.querySelector('.current-date');
 const currentTime = document.querySelector('.current-time');
+const currentVisibility = document.querySelector('.current-visibility');
 const positionGroups = [];
 const positions = [];
 const upArrow = document.querySelector('.up-arrow');
@@ -113,6 +114,7 @@ async function showStationData() {
   longitudeData.innerText = longitude;
   currentDate.innerText = now.toLocaleDateString();
   currentTime.innerText = now.toLocaleTimeString();
+  currentVisibility.innerText = data.visibility;
   // if marker exists, remove it, used to show only one marker
   if (marker !== null) {
     map.removeLayer(marker);
