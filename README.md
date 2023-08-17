@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="img/logo.png" width="306" height="200" />
+    <img src="img/logo.png" width="153" height="100" />
 </p>
 
 ## About ISS Location
