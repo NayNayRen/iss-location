@@ -1,7 +1,7 @@
-<!--
-An app created to pin the current location of the
-International Space Station every 35 seconds.
+<p align="center">
+    <img src="img/logo.png" width="306" height="200" />
+</p>
 
-It's using Leaflet mapping, similar to Google maps.
-Leaflet uses a cdn for css and javascript delivery.
--->
+## About ISS Location
+
+An app created to pin the current location of the International Space Station every 2 seconds. It's using Leaflet.js mapping, similar to Google Maps. Leaflet.js uses a cdn for css and javascript delivery. Plenty of options, mobile friendly
