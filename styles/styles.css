@@ -446,8 +446,8 @@ header h1 {
   -webkit-transition: right 250ms ease;
   align-items: center;
   background-color: #fff;
-  border-bottom-left-radius: 5px;
-  border-top-left-radius: 5px;
+  border-bottom-left-radius: 50%;
+  border-top-left-radius: 50%;
   bottom: 95px;
   box-shadow: 0 0 5px #000;
   display: -ms-flexbox;
