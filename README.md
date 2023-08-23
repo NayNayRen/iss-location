@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="img/nasa-logo.png" alt="NASA Logo" width="100" height="82" />
+    <img src="img/logo.png" alt="My Logo" width="77" height="50" />
 </p>
 
 ## About ISS Location
@@ -25,7 +25,3 @@ I embeded the 2 live feeds from YouTube. They are officially provided by NASA. E
 ## A Little Bug
 
 If you let the app run long enough for the ISS to make a full "rotation" from 0 to 180 degrees, the path will draw a straight line to what is essentially the othe side of the world. It starts at -180 as it should and the map reloads, everything continues to work, just draws the line to connect the 2 points.
-
-<p align="center">
-    <img src="img/logo.png" alt="My Logo" width="77" height="50" />
-</p>
